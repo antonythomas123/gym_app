@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import { useEffect, useState } from "react";
 import { SelectedPage } from "@/types/enums";
+import Home from "@/components/Home/Home";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
@@ -27,7 +28,13 @@ function App() {
 
   return (
     <div className="app">
-      <Navbar isTopOfPage={isTopOfPage} selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+      <Navbar
+        isTopOfPage={isTopOfPage}
+        selectedPage={selectedPage}
+        setSelectedPage={setSelectedPage}
+      />
+
+      <Home setSelectedPage={setSelectedPage}/>
     </div>
   );
 }
